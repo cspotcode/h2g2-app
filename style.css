@@ -1,0 +1,31 @@
+body {
+  background-color: #222;
+  font-family: Calibri, Helvetica;
+  color: #2ecc40;
+  text-shadow: 0px 0px 2px #2ecc40;
+}
+.guide-header {
+  text-align: center;
+  font-size: 60px;
+}
+.search-box {
+  font-size: 60px;
+}
+.search-row {
+  margin-left: auto;
+  margin-right: auto;
+}
+.search-row form,
+.search-row input {
+  display: inline;
+}
+.stop-reading {
+  display: inline-block;
+  border: 1px solid #2ecc40;
+  font-size: 60px;
+  width: 90px;
+  text-align: center;
+}
+.result-display {
+  font-size: 60px;
+}

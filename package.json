@@ -1,0 +1,24 @@
+{
+  "name": "h2g2-app",
+  "version": "0.0.0",
+  "description": "",
+  "private": true,
+  "main": "index.html",
+  "window": {
+    "toolbar": false
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Bradley <cspotcode@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^2.4.1",
+    "nomnom": "^1.8.0",
+    "unirest": "^0.2.9"
+  },
+  "devDependencies": {
+    "axis": "^0.3.0",
+    "stylus": "^0.49.3"
+  }
+}
