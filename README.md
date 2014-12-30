@@ -4,16 +4,14 @@ This is a quick-and-dirty "Hitchhiker's Guide to the Galaxy" app I made in a cou
 
 1.  Clone or download this repository.
 1.  Use npm to install dependencies.
-    ```
-    > npm install
-    ```
+
+        > npm install
 1.  Install [Ivona Text-to-Speech](http://www.ivona.com/us/for-individuals/voices-for-windows/) with the "Brian" British English voice.
 1.  Sign up for a [Mashape](https://www.mashape.com) account, find the [Urban dictionary API](https://www.mashape.com/community/urban-dictionary), and get your personal Mashape API Key.  Put this into `config.js`.
 1.  Launch Ivona's UI and enable the clipboard monitor.
 1.  Launch this app with node-webkit:
-    ```
-    > RUN.bat
-    ```
+    
+        > RUN.bat
 
 ## Questions
 
