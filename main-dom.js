@@ -32,29 +32,45 @@ $(function() {
         mySound.play();
         setTimeout(function() {
             cb();
-        }, 3700);
+        }, 2.5e3);
     }
     
     function getQuery() {
         return $('.search-box').val();
     }
     
-    $('.search-box').on('click', function() {
-        showKeyboard();
-    });
+    function clearQuery() {
+        $('.search-box').val('');
+    }
+
+    // $('.search-box').on('click', function() {
+    //     showKeyboard();
+    // });
     
     $('.search-form').on('submit', function() {
+        showKeyboard();
         var query = getQuery();
         var soundDone = $.Deferred();
         var definitionFound = $.Deferred();
+        var imageFound = $.Deferred();
         var definition = null;
         resetAnimation();
-        node.setClipboard(' ');
+        node.setClipboard('()');
         playGuideSound(soundDone.resolve);
         node.getDefinition(query, function(err, result) {
+            if(err) return;
             definition = result;
             definitionFound.resolve();
         });
+        // node.getImage(query, function(err, result) {
+        //     var image = result;
+        //     $('.neon-image').remove();
+        //     var imgTag = $('<img class="neon-image">');
+        //     imgTag.attr('src', image.thumbnail);
+        //     $('.result-display').prepend(imgTag);
+            
+        //     imageFound.resolve();
+        // });
         $.when(soundDone, definitionFound).done(function() {
             var textToShow;
             if(!definition) textToShow = 'Not found.';
@@ -69,7 +85,9 @@ $(function() {
     
     $('.stop-reading').on('click', function() {
         resetAnimation();
-        node.setClipboard(' ');
+        clearQuery();
+        mySound.stop();
+        node.setClipboard('()');
     })
 
     var isAnimating = false;
@@ -97,10 +115,19 @@ $(function() {
 
     function doAnim() {
         if(!isAnimating) return;
-        
+
+        if(shownLength === 0) $('.text-container').html('');      
         shownLength++;
-        var substring = fullText.slice(0, shownLength);
-        $('.result-display').html(htmlEncode(substring).replace(/\n/g, '<br>'));
+        // var substring = fullText.slice(0, shownLength);
+        // $('.result-display').html(htmlEncode(substring).replace(/\n/g, '<br>'));
+
+        var substring = fullText.slice(shownLength - 1, shownLength);
+        var nextLetterSpan = $('<span class="glow-letter"></span>');
+        nextLetterSpan.text(substring.toUpperCase());
+        if(substring === '\n') {
+            nextLetterSpan = $('<br />');
+        }
+        $('.text-container').append(nextLetterSpan);
         if(shownLength >= fullText.length) isAnimating = false;
         
         if(isAnimating) requestAnimationFrame(doAnim);

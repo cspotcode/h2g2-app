@@ -21,15 +21,23 @@ Feel free to [file an issue](https://github.com/cspotcode/h2g2-app/issues); the 
 
 ## Details
 
-It runs in [node-webkit](https://github.com/rogerwang/node-webkit) and was designed for my Microsoft Surface which, when properly decorated, can pass as the Hitchhiker's Guide.  Other tablets should work as well.
+It runs in [node-webkit](https://github.com/rogerwang/node-webkit) and was designed for my Microsoft Surface which, when properly decorated,
+can pass as the Hitchhiker's Guide.  Other tablets should work as well.
 
-It uses an [unofficial Urban Dictionary API](https://www.mashape.com/community/urban-dictionary) I found on [Mashape](httpw://www.mashape.com).  As luck would have it, looking up "Earth" produces appropriate results.
+It uses an [unofficial Urban Dictionary API](https://www.mashape.com/community/urban-dictionary) I found on [Mashape](httpw://www.mashape.com).
+As luck would have it, looking up "Earth" produces appropriate results.
 
-I used the [Ivona Text-to-Speech engine](http://www.ivona.com/us/for-individuals/voices-for-windows/) with the "Brian" British English voice.  Ivona is a commercial product; they offer a free 30 day trial.  Ivona's UI has a clipboard monitor that will watch the Windows clipboard and read any copied text aloud.  My app is built for this; it uses node-webkit's clipboard API to "copy" any definition it wants to be read aloud.  It "copies" an empty string to tell Ivona to stop talking.
+I used the [Ivona Text-to-Speech engine](http://www.ivona.com/us/for-individuals/voices-for-windows/) with the "Brian" British English voice.
+Ivona is a commercial product; they offer a free 30 day trial.  Ivona's UI has a clipboard monitor that will watch the Windows clipboard and
+read any copied text aloud.  My app is built for this; it uses node-webkit's clipboard API to "copy" any definition it wants to be read aloud.
+It "copies" an empty string to tell Ivona to stop talking.
 
-Windows 8 has an on-screen keyboard that automatically opens in certain situations.  Unfortunately, focusing a textbox in node-webkit is not one of those situations.  Fortunately, Windows 8 has an .exe that you can run to open the on-screen keyboard.  This app invokes that .exe every time the text box received focus.
+Windows 8 has an on-screen keyboard that automatically opens in certain situations.  Unfortunately, focusing a textbox in node-webkit is not
+one of those situations.  Fortunately, Windows 8 has an .exe that you can run to open the on-screen keyboard.  This app invokes that .exe
+every time the text box received focus.
 
-The visual design is... good enough.  I was trying to match the Guide's glowing wireframe style from the classic BBC TV show, not its style from the Disney movie.
+The visual design is... good enough.  I was trying to match the Guide's glowing wireframe style from the classic BBC TV show, not its style
+from the Disney movie.
 
 ## License
 

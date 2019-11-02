@@ -1,8 +1,24 @@
 body {
   background-color: #222;
   font-family: Calibri, Helvetica;
+  font-weight: bold;
   color: #2ecc40;
-  text-shadow: 0px 0px 2px #2ecc40;
+  /*color: #0B83BA;*/
+  text-shadow: 0px 0px 5px #2ecc40;
+}
+.glow-letter {
+  color: #0B83BA;
+  text-shadow: 0px 0px 2px #0B83BA;
+  -webkit-animation: glow-letter-fade 0.2s 1;
+}
+@-webkit-keyframes glow-letter-fade {
+    from {
+      text-shadow: 0px 0px 50px #FFF;
+    }
+    to {
+      top: 200px;
+      text-shadow: 0px 0px 2px #0B83BA;
+    }
 }
 .guide-header {
   text-align: center;
@@ -28,4 +44,7 @@ body {
 }
 .result-display {
   font-size: 60px;
+}
+.neon-image {
+  float: right;
 }
